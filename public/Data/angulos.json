@@ -1,0 +1,24 @@
+[
+  {
+    "frame": 0,
+    "joints": {
+      "RightShoulder": 0,
+      "RightElbow": 20,
+      "RightWrist": -10,
+      "LeftShoulder": 5,
+      "LeftElbow": 15,
+      "LeftWrist": -5
+    }
+  },
+  {
+    "frame": 1,
+    "joints": {
+      "RightShoulder": 5,
+      "RightElbow": 25,
+      "RightWrist": -5,
+      "LeftShoulder": 10,
+      "LeftElbow": 20,
+      "LeftWrist": 0
+    }
+  }
+]
