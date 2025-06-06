@@ -1,0 +1,143 @@
+[
+  {
+    "item": 1,
+    "tiempo": "0.0s",
+    "accCuello": 3.12,
+    "accTorax": 8.97,
+    "accBrazo": 2.85
+  },
+  {
+    "item": 2,
+    "tiempo": "0.1s",
+    "accCuello": 5.4,
+    "accTorax": 15.6,
+    "accBrazo": 6.0
+  },
+  {
+    "item": 3,
+    "tiempo": "0.2s",
+    "accCuello": 9.9,
+    "accTorax": 12.0,
+    "accBrazo": 3.9
+  },
+  {
+    "item": 4,
+    "tiempo": "0.3s",
+    "accCuello": 1.1,
+    "accTorax": 0.4,
+    "accBrazo": 7.5
+  },
+  {
+    "item": 5,
+    "tiempo": "0.4s",
+    "accCuello": 17.1,
+    "accTorax": 14.6,
+    "accBrazo": 8.3
+  },
+  {
+    "item": 6,
+    "tiempo": "0.5s",
+    "accCuello": 0.3,
+    "accTorax": 5.9,
+    "accBrazo": 2.4
+  },
+  {
+    "item": 7,
+    "tiempo": "0.6s",
+    "accCuello": 2.9,
+    "accTorax": 3.4,
+    "accBrazo": 0.7
+  },
+  {
+    "item": 8,
+    "tiempo": "0.7s",
+    "accCuello": 6.8,
+    "accTorax": 8.0,
+    "accBrazo": 9.2
+  },
+  {
+    "item": 9,
+    "tiempo": "0.8s",
+    "accCuello": 14.4,
+    "accTorax": 11.8,
+    "accBrazo": 1.9
+  },
+  {
+    "item": 10,
+    "tiempo": "0.9s",
+    "accCuello": 4.4,
+    "accTorax": 7.1,
+    "accBrazo": 5.6
+  },
+  {
+    "item": 11,
+    "tiempo": "1.0s",
+    "accCuello": 0.6,
+    "accTorax": 2.1,
+    "accBrazo": 1.0
+  },
+  {
+    "item": 12,
+    "tiempo": "1.1s",
+    "accCuello": 6.1,
+    "accTorax": 10.5,
+    "accBrazo": 3.1
+  },
+  {
+    "item": 13,
+    "tiempo": "1.2s",
+    "accCuello": 16.0,
+    "accTorax": 6.3,
+    "accBrazo": 2.7
+  },
+  {
+    "item": 14,
+    "tiempo": "1.3s",
+    "accCuello": 11.7,
+    "accTorax": 14.2,
+    "accBrazo": 4.0
+  },
+  {
+    "item": 15,
+    "tiempo": "1.4s",
+    "accCuello": 13.2,
+    "accTorax": 9.1,
+    "accBrazo": 0.4
+  },
+  {
+    "item": 16,
+    "tiempo": "1.5s",
+    "accCuello": 7.7,
+    "accTorax": 5.5,
+    "accBrazo": 6.8
+  },
+  {
+    "item": 17,
+    "tiempo": "1.6s",
+    "accCuello": 5.1,
+    "accTorax": 3.7,
+    "accBrazo": 2.5
+  },
+  {
+    "item": 18,
+    "tiempo": "1.7s",
+    "accCuello": 9.4,
+    "accTorax": 11.3,
+    "accBrazo": 1.2
+  },
+  {
+    "item": 19,
+    "tiempo": "1.8s",
+    "accCuello": 15.2,
+    "accTorax": 2.5,
+    "accBrazo": 8.6
+  },
+  {
+    "item": 20,
+    "tiempo": "1.9s",
+    "accCuello": 10.2,
+    "accTorax": 0.9,
+    "accBrazo": 4.8
+  }
+  
+]
