@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sensor3DPlot from "../../../components/Sensor3DPlot";
 
 const CDC: React.FC = () => {
+  const [valorJson, setValorJson] = useState<number | null>(null);
+  const [selected, setSelected] = useState('Brazalete muñeca derecha');
+
+  useEffect(() => {
+    fetch("/Data/cdc-sensores.json")
+      .then(res => res.json())
+      .then(data => {
+        console.log("✅ JSON cargado:", data);
+        setValorJson(data.porcentaje);
+      })
+      .catch(err => console.error("❌ Error al cargar JSON:", err));
+  }, []);
+
   const sensores = [
-    { nombre: 'Brazalete muñeca derecha', porcentaje: 75 },
+    { nombre: 'Brazalete muñeca derecha', porcentaje: valorJson },
     { nombre: 'Brazalete codo derecho', porcentaje: 60 },
     { nombre: 'Brazalete muñeca izquierda', porcentaje: 80 },
     { nombre: 'Brazalete codo izquierdo', porcentaje: 55 },
     { nombre: 'Cuello', porcentaje: 50 },
+    { nombre: 'pie', porcentaje: 50 },
   ];
-
-  const [selected, setSelected] = useState('Brazalete muñeca derecha');
 
   const datos3D: Record<string, { x: number; y: number; z: number }[]> = {
     'Brazalete muñeca derecha': [
@@ -38,6 +50,11 @@ const CDC: React.FC = () => {
       { x: 4, y: 3, z: 2 },
       { x: 6, y: 5, z: 4 },
     ],
+    'pie': [
+      { x: 1, y: 1, z: 1 },
+      { x: 2, y: 2, z: 2 },
+      { x: 3, y: 3, z: 3 },
+    ]
   };
 
   return (
@@ -45,23 +62,46 @@ const CDC: React.FC = () => {
       <h2>Distribución CDC</h2>
 
       {/* Barras de progreso */}
-      {sensores.map((item, index) => (
-        <div key={index} className="mb-4">
-          <label className="form-label fw-bold">{item.nombre}</label>
-          <div className="progress">
-            <div
-              className="progress-bar progress-bar-striped bg-success"
-              role="progressbar"
-              style={{ width: `${item.porcentaje}%` }}
-              aria-valuenow={item.porcentaje}
-              aria-valuemin={0}
-              aria-valuemax={100}
-            >
-              {item.porcentaje}%
+      {sensores.map((item, index) => {
+        const porcentaje = item.porcentaje;
+        const isFirst = index === 0;
+        const cargado = typeof porcentaje === 'number';
+
+        if (isFirst && !cargado) {
+          return (
+            <div key={index} className="mb-4">
+              <label className="form-label fw-bold">{item.nombre}</label>
+              <div className="progress">
+                <div
+                  className="progress-bar bg-secondary"
+                  role="progressbar"
+                  style={{ width: "10%" }}
+                >
+                  Cargando...
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <div key={index} className="mb-4">
+            <label className="form-label fw-bold">{item.nombre}</label>
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: `${porcentaje}%` }}
+                aria-valuenow={porcentaje}
+                aria-valuemin={0}
+                aria-valuemax={100}
+              >
+                {porcentaje}%
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {/* Sección de posición 3D */}
       <div className="mt-5">
@@ -80,11 +120,10 @@ const CDC: React.FC = () => {
         </div>
 
         {/* Scatter 3D */}
-        <Sensor3DPlot id={selected} points={datos3D[selected]} />
+        <Sensor3DPlot id={selected} points={datos3D[selected] || []} />
       </div>
     </div>
   );
 };
 
 export default CDC;
-

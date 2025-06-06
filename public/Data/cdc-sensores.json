@@ -1,0 +1,8 @@
+[
+  { "nombre": "Brazalete muñeca derecha", "porcentaje": 75 },
+  { "nombre": "Brazalete codo derecho", "porcentaje": 60 },
+  { "nombre": "Brazalete muñeca izquierda", "porcentaje": 80 },
+  { "nombre": "Brazalete codo izquierdo", "porcentaje": 55 },
+  { "nombre": "Cuello", "porcentaje": 50 },
+  { "nombre": "pie", "porcentaje": 50 }
+]
