@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
+interface Punto {
+  x: number;
+  y: number;
+}
+
 const AccVsTime: React.FC = () => {
+  const [datos, setDatos] = useState<Punto[]>([]);
+
+  useEffect(() => {
+    fetch('/Data/acc_vs_time.json')
+      .then((res) => res.json())
+      .then((data: Punto[]) => {
+        setDatos(data);
+        console.log("✅ Datos cargados:", data);
+      })
+      .catch((err) => console.error("❌ Error al cargar JSON:", err));
+  }, []);
+
   const data = [
     {
       id: 'Aceleración',
       color: 'hsl(211, 70%, 50%)',
-      data: [
-        { x: 0, y: 0 },
-        { x: 1, y: 2.1 },
-        { x: 2, y: 3.8 },
-        { x: 3, y: 2.9 },
-        { x: 4, y: 5.0 },
-        { x: 5, y: 6.3 },
-        { x: 6, y: 7.8 },
-        { x: 7, y: 9.1 },
-      ]
+      data: datos
     }
   ];
 
@@ -84,4 +92,3 @@ const AccVsTime: React.FC = () => {
 };
 
 export default AccVsTime;
-
